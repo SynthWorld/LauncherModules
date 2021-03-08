@@ -28,6 +28,7 @@ public class ModuleImpl extends LauncherModule {
         Config c = new Config();
         if ("YOUR_DSN".equals(c.dsn) || c.dsn == null) {
             LogHelper.error("Please, configure Sentry_lmodule config!!!");
+            LogHelper.error(c.dsn);
             return;
         }
         try {
