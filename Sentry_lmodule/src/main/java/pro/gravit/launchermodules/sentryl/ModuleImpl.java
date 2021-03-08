@@ -54,6 +54,7 @@ class CustomUncaughtExceptionHandler implements Thread.UncaughtExceptionHandler 
 
     @Override
     public void uncaughtException(Thread thread, Throwable thrown) {
+        LogHelper.error("Trying to send exception!");
         if (thrown == null) return;
         EventBuilder eventBuilder = new EventBuilder()
                 .withMessage(thrown.getMessage())
